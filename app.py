@@ -2,6 +2,11 @@ import streamlit as st
 import pickle
 import os
 
+# Set the port to the environment variable PORT or default to 8501
+port = os.getenv("PORT", 8501)
+
+st.set_option('server.port', port)
+
 # Initialize or load session state
 if 'tabs' not in st.session_state:
     st.session_state.tabs = {}
