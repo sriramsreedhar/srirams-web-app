@@ -1,8 +1,6 @@
 import streamlit as st
-import pickle
-import os
 
-# Initialize or load session state
+# Initialize session state variables
 if 'tabs' not in st.session_state:
     st.session_state.tabs = {}
 if 'selected_tab' not in st.session_state:
@@ -18,32 +16,14 @@ def add_tab():
         if st.session_state.selected_tab is None:
             st.session_state.selected_tab = tab_name
 
-# Function to load tabs from pickle file
-def load_tabs():
-    if os.path.exists('data/tabs_data.pkl'):
-        with open('data/tabs_data.pkl', 'rb') as file:
-            return pickle.load(file)
-    return {}
-
-# Function to save tabs to pickle file
-def save_tabs():
-    with open('data/tabs_data.pkl', 'wb') as file:
-        pickle.dump(st.session_state.tabs, file)
-
 # Function to delete a tab
 def delete_tab(tab_name):
     if tab_name in st.session_state.tabs:
         del st.session_state.tabs[tab_name]
-        save_tabs()  # Save changes after deletion
         if st.session_state.selected_tab == tab_name:
-            # Reset selected tab
             st.session_state.selected_tab = None
             if st.session_state.tabs:
                 st.session_state.selected_tab = list(st.session_state.tabs.keys())[0]  # Set to first tab if available
-
-# Load tabs from file if not already in session state
-if not st.session_state.tabs:
-    st.session_state.tabs = load_tabs()
 
 # Interface
 st.title("Notepad Web")
@@ -79,22 +59,19 @@ with st.sidebar:
         **Features:**
         
         - **Multiple Tabs**: You can create up to 5 tabs for organizing your notes. Each tab can hold a different note, allowing you to easily manage multiple topics or tasks.
-        - **Automatic Saving**: Your notes are automatically saved as you type. This ensures that your work is never lost and can be quickly accessed later.
-        - **Tab Management**: You can add 5 new tabs, delete existing ones, providing flexible note management. The sidebar provides easy access to all your tabs.
+        - **Tab Management**: You can add new tabs, delete existing ones, and rename tabs, providing flexible note management. The sidebar provides easy access to all your tabs.
         - **Download Notes**: Each note can be downloaded as a plain text file with a single click. This feature is perfect for exporting your notes for offline use or sharing them with others.
-        - **Data Storage**: Your tabs and their contents are saved only during the session.
         
         **How to Use:**
         
         1. **Adding a New Tab**: Click the "Add New Tab" button in the sidebar. You can have up to 5 tabs at a time.
         2. **Selecting a Tab**: Click on any tab name in the sidebar to switch to that tab and edit its content.
         3. **Deleting a Tab**: Select a tab and click the "Delete Tab" button to remove it from the list.
-        4. **Saving Your Work**: Once you've written your note, click the "Download as Text File" button to save it to your device.
-        
+        4. **Downloading Notes**: Once you've written your note, click the "Download as Text File" button to save it to your device.
         
         **Technical Details:**
         
-        Each user's notes are isolated and secure. We are not storing anything on server and all data needs to be downloaded by user.
+        This application is built using **Streamlit**, a Python framework for creating interactive web applications. The notes are managed using Python's session state, ensuring that each user's notes are isolated and secure.
         """)
 
 # Main content area
