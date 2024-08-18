@@ -50,7 +50,7 @@ if not st.session_state.tabs:
     st.session_state.tabs = load_tabs()
 
 # Interface
-st.title("Multi-Tab Notepad")
+st.title("Notepad Web")
 
 # Sidebar layout
 with st.sidebar:
@@ -72,12 +72,12 @@ with st.sidebar:
 
     # Add New Tab button
     if len(st.session_state.tabs) < 5:
-        st.button("Add New Tab", on_click=add_tab)
+        st.button("Add New Tab", on_click=add_tab, key="add_new_tab")
     else:
         st.warning("Maximum of 5 tabs reached. Please delete a tab before adding a new one.")
 
     # Save Tabs button
-    st.button("Save Tabs", on_click=save_tabs)
+    st.button("Save Tabs", on_click=save_tabs, key="save_tabs_sidebar")
 
 # Main area layout
 if st.session_state.selected_tab:
@@ -90,10 +90,11 @@ if st.session_state.selected_tab:
             label="Download as Text File",
             data=tab_content,
             file_name=f"{st.session_state.selected_tab}.txt",
-            mime="text/plain"
+            mime="text/plain",
+            key="download_file"
         )
     else:
         st.write("No content to download.")
 
 # Automatically save session on content change
-st.button("Save Tabs", on_click=save_tabs)
+st.button("Save Tabs", on_click=save_tabs, key="save_tabs_main")
