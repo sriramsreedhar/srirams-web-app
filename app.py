@@ -25,6 +25,20 @@ def delete_tab(tab_name):
             if st.session_state.tabs:
                 st.session_state.selected_tab = list(st.session_state.tabs.keys())[0]  # Set to first tab if available
 
+
+# Add meta tags using HTML
+st.markdown("""
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notepad Web is a free, secure online text editor that allows you to create, manage, and download notes.">
+    <meta name="keywords" content="notepad, online text editor, web-based notepad, note-taking">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Notepad Web - Online Text Editor">
+    <meta property="og:description" content="Create, manage, and download notes with Notepad Web. No signup required.">
+    <meta property="og:url" content="https://www.notepadweb.com">
+    <title>Notepad Web</title>
+""", unsafe_allow_html=True)
+
 # Interface
 st.title("Welcome to Notepad Web – Free, Secure, and No Signup Required!")
 
