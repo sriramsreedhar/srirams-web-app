@@ -59,7 +59,7 @@ with st.sidebar:
         **Features:**
         
         - **Multiple Tabs**: You can create up to 5 tabs for organizing your notes. Each tab can hold a different note, allowing you to easily manage multiple topics or tasks.
-        - **Tab Management**: You can add new tabs, delete existing ones, and rename tabs, providing flexible note management. The sidebar provides easy access to all your tabs.
+        - **Tab Management**: You can add new tabs and delete existing ones, providing flexible note management. The sidebar provides easy access to all your tabs.
         - **Download Notes**: Each note can be downloaded as a plain text file with a single click. This feature is perfect for exporting your notes for offline use or sharing them with others.
         
         **How to Use:**
@@ -71,7 +71,7 @@ with st.sidebar:
         
         **Technical Details:**
         
-        This application is built using **Streamlit**, a Python framework for creating interactive web applications. The notes are managed using Python's session state, ensuring that each user's notes are isolated and secure.
+        Each user's notes are isolated and secure. We are not storing anything on server and all data needs to be downloaded by user.
         """)
 
 # Main content area
