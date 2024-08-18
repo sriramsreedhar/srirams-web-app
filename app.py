@@ -71,7 +71,7 @@ with st.sidebar:
         
         **Technical Details:**
         
-        Each user's notes are isolated and secure. We are not storing anything on server and all data needs to be downloaded by user.
+        Each user's notes are isolated and secure. We are not storing anything on the server, and all data needs to be downloaded by the user. We are not responsible for any data loss.
         """)
 
 # Main content area
