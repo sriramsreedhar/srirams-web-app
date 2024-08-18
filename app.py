@@ -26,7 +26,7 @@ def delete_tab(tab_name):
                 st.session_state.selected_tab = list(st.session_state.tabs.keys())[0]  # Set to first tab if available
 
 # Interface
-st.title("Notepad Web")
+st.title("Welcome to Notepad Web!")
 
 # Sidebar for tab management
 with st.sidebar:
