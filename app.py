@@ -66,7 +66,7 @@ with st.sidebar:
         
         1. **Adding a New Tab**: Click the "Add New Tab" button in the sidebar. You can have up to 5 tabs at a time.
         2. **Selecting a Tab**: Click on any tab name in the sidebar to switch to that tab and edit its content.
-        3. **Deleting a Tab**: Select a tab and click the "Delete Tab" button to remove it from the list.
+        3. **Deleting a Tab**: Select a tab and click the "Delete Tab" button to remove it from the list. Once a tab is deleted, it can only be added back after all tabs have been deleted.
         4. **Downloading Notes**: Once you've written your note, click the "Download as Text File" button to save it to your device.
         
         **Technical Details:**
