@@ -1,5 +1,23 @@
 import streamlit as st
 
+# Inject meta tags
+meta_tags = """
+<meta name="description" content="A simple online notepad  for free ">
+<meta name="keywords" content="online notepad, notes, app">
+<meta name="author" content="Your Name">
+<meta property="og:title" content="Free Online Notepad">
+<meta property="og:description" content="Take notes easily with this simple online notepad.">
+<meta property="og:url" content="https://www.notepadweb.com">
+"""
+components.html(
+    f"""
+    <head>
+        {meta_tags}
+    </head>
+    """,
+    height=0,
+)
+
 # Initialize session state variables
 if 'tabs' not in st.session_state:
     st.session_state.tabs = {}
