@@ -70,7 +70,7 @@ with st.sidebar:
     if st.session_state.show_about:
         st.subheader("About This Application")
         st.write("""
-        Welcome to **Notepad Web**! This simple and intuitive web-based notepad application allows you to create, manage, and download multiple notes across different tabs. Designed with ease of use in mind, the application lets you seamlessly switch between notes and save your work directly to your device.
+        Welcome to **Notepad Web**! This simple and free intuitive web-based notepad application allows you to create, manage, and download multiple notes across different tabs. Designed with ease of use in mind, the application lets you seamlessly switch between notes and save your work directly to your device and no sign-up required.
 
         **Features:**
         
