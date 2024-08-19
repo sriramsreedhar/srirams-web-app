@@ -40,7 +40,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Interface
-st.title("Simplify Your Notes, with Notepadweb")
+#st.title("Simplify Your Notes, with Notepadweb")
+st.title("Simplify Your Notes,\nwith Notepadweb - No Signup Required!")
+
 
 # Sidebar for tab management
 with st.sidebar:
